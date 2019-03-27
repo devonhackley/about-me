@@ -16,6 +16,9 @@ let total = 0
 // set first question
 questionField.innerHTML = questionArray[0];
 
+/**
+ *  This function changes the question displayed to the user
+ */
 const changeQuestion = () => {
     // increment question index
     questionIndex++;
@@ -51,7 +54,7 @@ const userAnswer = (answer, correctAnswer) => {
             total--,
             console.log(`User answered with: ${answ}`)
         ) :
-            resultField.innerHTML = `Your answer was: ${event.target.answerField.value}, and that was wrong :(` ;
+            resultField.innerHTML = `Your answer was: ${event.target.answerField.value}, and that was wrong :(` ; // user has no points
 };
 
 /**
