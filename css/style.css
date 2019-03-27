@@ -23,19 +23,6 @@ header h2 {
     font-weight: 200;
 }
 
-ul {
-   list-style: none;
-}
-
-ul li {
-    display: inline;
-}
-
-
-.block-list li {
-    display: block;
-}
-
 a {
     text-decoration: none;
 }
@@ -45,7 +32,6 @@ a {
     width: 50%;
     height: 50%;
     text-align: center;
-    display: inline-block;
     margin-left: 22em;
     margin-bottom: 1em;
     background-color:rgb(14, 59, 105);
@@ -58,7 +44,7 @@ a {
 }
 
 #favorite ol { 
-    padding-right: 40px;
+    padding-left: 110px;
 }
 .content-container  h3 {
     color: #FFFFFF;
@@ -69,6 +55,14 @@ a {
 
 .content ul {
     padding-right: 3em;
+    list-style: none;
+}
+
+ol li {
+    margin: 3px 12px 3px 70px;
+    width: 150px;
+    float:left;
+    overflow: visible;
 }
 
 /* Container elements */
@@ -81,12 +75,12 @@ a {
 #about-me {
     padding: 0 15px;
     width: auto;
-    height: 150px;
     margin: 1.5em;
 }
 
 #about-me h3 {
     font-size: 32px;
+    margin-left: 42%;
 }
 
 #about-me p {
@@ -102,6 +96,9 @@ a {
 
 #contact {
     margin-right: 40px;
+}
+#contact li {
+    display: inline;
 }
 
 #gameQuestion {
