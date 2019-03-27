@@ -45,15 +45,15 @@ const userAnswer = (answer, correctAnswer) => {
             '';
     correctAnswer === answ ?
         (
-            resultField.innerHTML = `Your answer was: ${event.target.answerField.value}, and that was correct!`,
+            resultField.innerHTML = `Your answer was: ${answer}, and that was correct!`,
             total++,
             console.log(`Question was: ${questionArray[questionIndex]}. User answered with: ${answ}`)
         ) : total !== 0 ? (
-            resultField.innerHTML = `Your answer was: ${event.target.answerField.value}, and that was wrong :(`,
+            resultField.innerHTML = `Your answer was: ${answer}, and that was wrong :(`,
             total--,
             console.log(`User answered with: ${answ}`)
         ) :
-            resultField.innerHTML = `Your answer was: ${event.target.answerField.value}, and that was wrong :(` ; // user has no points
+            resultField.innerHTML = `Your answer was: ${answer}, and that was wrong :(` ; // user has no points
 };
 
 /**
