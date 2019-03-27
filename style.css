@@ -1,0 +1,70 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    position: static;
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+    margin: -1em;
+    background-color: rgb(3, 3, 3);
+    color: white;
+}
+
+header h2 {
+    font-size: 2em;
+}
+
+ul {
+   list-style: none;
+}
+
+ul li {
+    display: inline;
+}
+
+
+.block-list li {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    width: 40%;
+    height: 50%;
+    text-align: center;
+    display: inline-block;
+    margin-left: 4em;
+    background-color: rgb(255,23,54);
+    color: white;
+}
+
+.content h3 {
+    text-decoration: underline;
+}
+
+.content ul {
+    padding-right: 3em;
+}
+
+#about-me {
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+}
+
+#contact, footer {
+    text-align: center;
+}
+
+#contact {
+    margin-right: 40px;
+}
+
+#gameQuestion {
+    font-weight: 400;
+}
