@@ -1,9 +1,9 @@
 'use strict';
 
 // variables
-const questionArray = ['Do I like to code?', 'Was I in the military?', 'Do I have any siblings?', 'Do I like the rain?', 'Do I have a pet corgi', 'What is my favorite number?'];
+const questionArray = ['Do I like to code?', 'Was I in the military?', 'Do I have any siblings?', 'Do I like the rain?', 'Do I have a pet corgi', 'What is my favorite number? Hint it is between 1-10'];
 const possibleAnswersArray = ['Yes', 'y', 'yeah', 'yes', 'No', 'n', 'nah', 'no'];
-const answerArray = ['yes', 'yes', 'yes', 'no', 'yes', 8];
+const answerArray = ['yes', 'yes', 'yes', 'no', 'yes', '8'];
 const form = document.getElementById('guessingGame');
 const questionField = document.getElementById('gameQuestion');
 const resultField = document.getElementById('userResult');
@@ -34,7 +34,6 @@ const changeQuestion = () => {
     }
 
     // disable next button
-    // enable next question button
     nextBtn.disabled = true;
 };
 /**
@@ -44,9 +43,10 @@ const changeQuestion = () => {
  */
 const userAnswer = (answer, correctAnswer) => {
     // forcing a yes or no depending on what the user inputed
-    const answ = answer.indexOf('y') !== -1 ? 'yes' :
-        answer.indexOf('n') !== -1 ? 'no' :
-            '';
+    const answ = questionIndex > 4 ? answer :
+        answer.indexOf('y') !== -1 ? 'yes' :
+            answer.indexOf('n') !== -1 ? 'no' :
+                '';
     // enable next question button
     nextBtn.disabled = false;
     correctAnswer === answ ?
@@ -69,14 +69,29 @@ const userAnswer = (answer, correctAnswer) => {
 const handleGame = (event) => {
     event.preventDefault();
     const answer = event.target.answerField.value.toLowerCase();
+    const correctA = answerArray[questionIndex];
     if(questionIndex < 5) {
         if(possibleAnswersArray.indexOf(answer) !== -1) {
-            userAnswer(answer, answerArray[questionIndex]);
+            userAnswer(answer, correctA);
         } else {
             resultField.innerHTML = 'Bad input, try again';
         }
     } else {
-        console.log('in here');
+        questionIndex === 5 ?
+            (
+                answer === correctA ?
+                    (
+                        userAnswer(answer, correctA)
+                    ) :
+                    (
+                        answer > correctA ?
+                            resultField.innerHTML = 'I would guess a little lower' :
+                            resultField.innerHTML = 'I would guess a little higher'
+                    )
+            ) :
+            (
+                console.log('blarg')
+            );
     }
 };
 
