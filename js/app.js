@@ -31,11 +31,11 @@ const changeQuestion = () => {
     } else {
         questionField.innerHTML = `Total Score: ${total}`;
         nextBtn.style.display = 'none';
-    }    
+    }
 };
 /**
  *  This function basically determines what to render for the result,
- *  given user input, we determine if that answer was the correct or incorrect 
+ *  given user input, we determine if that answer was the correct or incorrect
  *  and return a message within the result field area
  */
 const userAnswer = (answer, correctAnswer) => {
