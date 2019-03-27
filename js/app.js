@@ -27,7 +27,7 @@ const changeQuestion = () => {
 
     // change question
     if(questionIndex < questionArray.length) {
-        questionField.innerHTML = questionArray[questionIndex]
+        questionField.innerHTML = questionArray[questionIndex];
     } else {
         questionField.innerHTML = `Total Score: ${total}`;
         nextBtn.style.display = 'none';
@@ -40,8 +40,8 @@ const changeQuestion = () => {
  */
 const userAnswer = (answer, correctAnswer) => {
     // forcing a yes or no depending on what the user inputed
-    const answ = answer.indexOf('y') !== -1 ? 'yes' : 
-        answer.indexOf('n') !== -1 ? 'no'  : 
+    const answ = answer.indexOf('y') !== -1 ? 'yes' :
+        answer.indexOf('n') !== -1 ? 'no' :
             '';
     correctAnswer === answ ?
         (
