@@ -4,13 +4,16 @@
 const questionArray = ['First, what is your name?','Do I like to code?', 'Was I in the military?', 'Do I have a sibling?', 'Do I like the rain?', 'Do I have a pet corgi?', 'What is my favorite number? Hint it is between 1-10', 'Can you guess what my favorite pizza toppings are?'];
 const possibleAnswersArray = ['Yes', 'y', 'Y', 'yeah', 'yes', 'No', 'n', 'N', 'nah', 'no'];
 const answerArray = ['yes', 'yes', 'yes', 'yes', 'no', 'yes', '8', ['pepperoni', 'cheese', 'onions']];
+
+// DOM elements
 const form = document.getElementById('guessingGame');
 const questionField = document.getElementById('gameQuestion');
 const resultField = document.getElementById('userResult');
 const answerField = document.getElementById('answerField');
 const nextBtn = document.getElementById('nextQuestion');
 const submitBtn = document.getElementById('submit');
-let questionIndex = 0;
+
+let questionIndex = 0; // used to track what question the user is at, also used to determine correct answer
 let total = 0;
 let playerName = '';
 let questionSixTries = 0;
@@ -83,12 +86,14 @@ const handleGame = (event) => {
     const answer = event.target.answerField.value;
     const correctA = answerArray[questionIndex];
 
+    resultField.innerHTML = '';
+
     // change text on next button
     nextBtn.value = 'Next Question';
     if (questionIndex < 6) {
         if (questionIndex === 0) { // first question is asking for the name of player
-            playerName = answer;
-            resultField.innerHTML = `Hi ${answer}, let's start the game!`;
+            playerName = answer !== '' ? answer : 'Creeper';
+            resultField.innerHTML = `Hi ${playerName}, let's start the game!`;
             // enable submit button
             submitBtn.disabled = true;
             // enable next question button
