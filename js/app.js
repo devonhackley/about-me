@@ -19,6 +19,10 @@ let questionSevenTries = 0;
 // set first question
 questionField.innerHTML = questionArray[0];
 
+const setElementConfiguration = (element, userResponse) => {
+
+    return element.innerHTML = userResponse;
+};
 /**
  *  This function changes the question displayed to the user
  */
@@ -38,7 +42,7 @@ const changeQuestion = () => {
     } else {
         console.log(`The user's total was: ${total}`);
         total === 7 ? // perfect
-            questionField.innerHTML = `You got ${total} out of 7 questions right! ${playerName}, that was a perfect score!` :
+            setElementConfiguration(questionField, `You got ${total} out of 7 questions right! ${playerName}, that was a perfect score!`) :
             total === 0 ? // doesn't know me at all
                 questionField.innerHTML = `You got ${total} out of 7 questions right! ${playerName}, you didn't get anything right..` :
                 questionField.innerHTML = `You got ${total} out of 7 questions right! Thanks for playing ${playerName}!`; // got some questions right
@@ -88,6 +92,7 @@ const handleGame = (event) => {
     if (questionIndex < 6) {
         if (questionIndex === 0) { // first question is asking for the name of player
             playerName = answer;
+            setElementConfiguration(resultField, `Hi ${answer}, let's start the game!`);
             resultField.innerHTML = `Hi ${answer}, let's start the game!`;
             // enable submit button
             submitBtn.disabled = true;
