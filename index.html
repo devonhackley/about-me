@@ -50,17 +50,21 @@
               </div>
 
           </div>
-           <div id="game">
-               <h3>Let's play a game:</h3>
-               <p>This is a guessing game</p>
-               <p>Answer yes or no for most questions</p>
-               <form id="guessingGame" method="post">
-                    <p id="gameQuestion"></p>
-                    <p><input id="answerField" type = "text" name = "answerField"></p>
-                    <input id="submit" name="submit" type="submit" value = "Submit">
-                    <input id="nextQuestion" type="button" onclick="changeQuestion()" value="Start Game" disabled>
-                </form>
-                <p id="userResult"></p>
+           <div id="game-container">
+               <div id="game">
+                   <h3>Let's play a game:</h3>
+                   <p>This is a guessing game</p>
+                   <p>Answer yes or no for most questions</p>
+                   <form id="guessingGame" method="post">
+                        <p id="gameQuestion"></p>
+                        <p><input id="answerField" type = "text" name = "answerField"></p>
+                        <p id="userResult"></p>
+                        <p class="input-buttons">
+                            <input id="submit" name="submit" type="submit" value = "Submit">
+                            <input id="nextQuestion" type="button" onclick="changeQuestion()" value="Start Game" disabled>
+                        </p>
+                    </form>
+               </div>
            </div>
            <div id="contact">
                 <ul>

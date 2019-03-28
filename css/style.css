@@ -94,11 +94,24 @@ ol li {
     text-align: center;
 }
 
-#contact {
-    margin-right: 40px;
-}
+
 #contact li {
     display: inline;
+}
+
+#game {
+    width: 48%;
+    margin: 2em 2em 2em 23em;
+    background-color: #f5f6ff;
+    padding: 1em;
+}
+
+#game p {
+    text-align: center;
+}
+
+.input-buttons {
+    float: right;
 }
 
 #gameQuestion {

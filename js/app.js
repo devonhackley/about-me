@@ -94,14 +94,14 @@ const handleGame = (event) => {
     } else {
         questionIndex === 6 ?
             (
-                answer === correctA ?
+                answer === correctA ? // answer was correct
                     (
                         userAnswer(answer, correctA)
                     ) :
                     (
                         questionSixTries < 4 ? // only allow the user to guess four times
                             (
-                                answer > correctA ?
+                                answer > correctA ? // check to see if user should guess higher or lower
                                     (
                                         resultField.innerHTML = 'I would guess a little <b>lower</b>',
                                         questionSixTries++,
@@ -122,7 +122,7 @@ const handleGame = (event) => {
             ) :
             (
 
-                correctA.indexOf(answer.toLowerCase()) !== -1 ?
+                correctA.indexOf(answer.toLowerCase()) !== -1 ? // answer was found in the array
                     ( // Paula reminded me of a great method arrays have, the .join(), annotating that here
                         resultField.innerHTML = `Your answer was: ${answer}, and that was <b>correct</b>! Some other choices are: ${correctA.join(', ')}.`,
                         total++,
