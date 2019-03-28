@@ -9,6 +9,7 @@ const questionField = document.getElementById('gameQuestion');
 const resultField = document.getElementById('userResult');
 const answerField = document.getElementById('answerField');
 const nextBtn = document.getElementById('nextQuestion');
+const submitBtn = document.getElementById('submit');
 let questionIndex = 0;
 let total = 0;
 let playerName = '';
@@ -27,6 +28,9 @@ const changeQuestion = () => {
     // clear these fields
     resultField.innerHTML = '';
     answerField.value = '';
+
+    // enable submit button
+    submitBtn.disabled = false;
 
     // change question
     if (questionIndex < questionArray.length) {
@@ -61,6 +65,7 @@ const userAnswer = (answer, correctAnswer) => {
         (
             resultField.innerHTML = `Your answer was: ${answer}, and that was <b>correct</b>!`,
             total++,
+            submitBtn.disabled = true,
             console.log(`Question was: ${questionArray[questionIndex]}. User answered with: ${answ}`)
         ) :
         (
@@ -84,6 +89,8 @@ const handleGame = (event) => {
         if (questionIndex === 0) { // first question is asking for the name of player
             playerName = answer;
             resultField.innerHTML = `Hi ${answer}, let's start the game!`;
+            // enable submit button
+            submitBtn.disabled = true;
             // enable next question button
             nextBtn.disabled = false;
         } else if (possibleAnswersArray.indexOf(answer) !== -1) {
