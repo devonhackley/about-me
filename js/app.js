@@ -73,7 +73,7 @@ const userAnswer = (answer, correctAnswer) => {
         ) :
         (
             console.log(`User answered with: ${answ}`),
-            resultField.innerHTML = `Your answer was: ${answer}, and that was <b>wrong</b> :(` // user has no points
+            resultField.innerHTML = `Your answer was: ${answer}, and that was <b>wrong</b>` // user has no points
         );
 };
 
@@ -85,8 +85,6 @@ const handleGame = (event) => {
     event.preventDefault();
     const answer = event.target.answerField.value;
     const correctA = answerArray[questionIndex];
-
-    resultField.innerHTML = '';
 
     // change text on next button
     nextBtn.value = 'Next Question';
