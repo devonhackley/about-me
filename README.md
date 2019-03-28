@@ -9,3 +9,9 @@ Project: This is a lab where we create an About Me page.
 - Restructured folder structure.
 - Added more comments to js
 
+3/28
+- Lab 4
+    - Driver: Ed Abrahamsen
+    - Navigator: Me
+    - Added a function that generates user responses
+
