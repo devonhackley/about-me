@@ -10,8 +10,8 @@ Project: This is a lab where we create an About Me page.
 - Added more comments to js
 
 3/28
-- Lab 4
+- Lab 4: Pair Programming
     - Driver: Ed Abrahamsen
     - Navigator: Me
-    - Added a function that generates user responses
+    - Added a function that sets the inner html of an element.
 
